@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
         - name: web-rotten-potatoes
-          image: cels0/rotten-potatoes:v1
+          image: cels0/rotten-potatoes:latest
           ports:
             - containerPort: 5000
           env: 
@@ -64,8 +64,7 @@ spec:
             - name: MONGODB_USERNAME
               value: mongouser
             - name: MONGODB_PASSWORD
-              value: mongopwd
-              
+              value: mongopwd         
 
 ---
 
@@ -77,7 +76,7 @@ spec:
   selector: 
     app:  web-rotten-potatoes
   ports:
-  - port: 80
-    targetPort: 5000
-    nodePort: 30000
+    - port: 80
+      targetPort: 5000
+      nodePort: 30000
   type: NodePort
