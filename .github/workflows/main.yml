@@ -28,7 +28,8 @@ jobs:
           tags: | 
             cels0/rotten-potatoes:latest
             cels0/rotten-potatoes:${{ github.run_number }}
-  CD:          
+  CD:   
+    needs: [CI]
     runs-on: ubuntu-latest
     
     steps:
